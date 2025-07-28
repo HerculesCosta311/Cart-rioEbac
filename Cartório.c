@@ -114,52 +114,70 @@ int main()             // Função principal onde a execução do programa começa
 {
 	int opcao=0;
 	int laco=1;
+	char senhadigitada[10]="a";
+	int comparacao;
 	
-	for(laco=1;laco=1;)
-		{
-			
-			system("cls");
-			
-			setlocale(LC_ALL, "Portuguese");  // Define o idioma do programa para Português, permitindo acentos e caracteres especiais
-			
-			printf("### Cartório da EBAC ###\n\n");  // Exibe o título do sistema do cartório
-			printf("Escolha a opção desejada do menu:\n\n");  // Exibe a instrução para o usuário escolher uma opção
-			printf("\t1 - Registrar Nomes\n");       // Exibe a opção 1 do menu: Registrar nomes (com tabulação para organização)
-			printf("\t2 - Consultar Nomes\n");       // Exibe a opção 2 do menu: Consultar nomes
-			printf("\t3 - Deletar Nomes\n\n");         // Exibe a opção 3 do menu: Deletar nomes
-			printf("\t4 - Sair Do Sistema\n\n");         // Exibe a opção 4 do menu: Sair do Sistema
-			printf("Opção: ");
-
-			scanf("%d", &opcao);
-	
-			system("cls");
-			
-			switch(opcao)
+	while (1)
+	{
+		system("cls");
+		printf("### Cartório da EBAC ###\n\n");
+		printf("Login do Administrador.\n\nDigite sua senha: ");
+		scanf("%s",senhadigitada);
+		
+		comparacao = strcmp(senhadigitada, "1234");
+		
+		if(comparacao == 0)
+		{	
+			for(laco=1;laco=1;)
 				{
-					case 1:
-						registro();
-					break;
-					
-					case 2:
-						consulta();					
-						break;
-					
-					case 3:
-						deletar();
-					break;
-					
-					case 4:
-						printf("Obrigado por utilizar o sistema!\n");
-						return 0;
-					break;
-					
-					default:
-						printf("Essa Opção Não Está Disponível.\n");
-						system("pause");
-					break;
-				}
+				
+					system("cls");
 			
+					setlocale(LC_ALL, "Portuguese");  // Define o idioma do programa para Português, permitindo acentos e caracteres especiais
+			
+					printf("### Cartório da EBAC ###\n\n");  // Exibe o título do sistema do cartório
+					printf("Escolha a opção desejada do menu:\n\n");  // Exibe a instrução para o usuário escolher uma opção
+					printf("\t1 - Registrar Nomes\n");       // Exibe a opção 1 do menu: Registrar nomes (com tabulação para organização)
+					printf("\t2 - Consultar Nomes\n");       // Exibe a opção 2 do menu: Consultar nomes
+					printf("\t3 - Deletar Nomes\n\n");         // Exibe a opção 3 do menu: Deletar nomes
+					printf("\t4 - Sair Do Sistema\n\n");         // Exibe a opção 4 do menu: Sair do Sistema
+					printf("Opção: ");
+
+					scanf("%d", &opcao);
+	
+					system("cls");
+			
+					switch(opcao)
+						{
+							case 1:
+								registro();
+							break;
+						
+							case 2:
+								consulta();					
+							break;
+					
+							case 3:
+								deletar();
+							break;
+					
+							case 4:
+								printf("Obrigado por utilizar o sistema!\n");
+								return 0;
+							break;
+					
+							default:
+								printf("Essa Opção Não Está Disponível.\n");
+								system("pause");
+							break;
+						}
+			
+				}
 		}
+		else
+			printf("Senha Incorreta.\n\n");
+			system("pause");
+	}
 }
 
 
